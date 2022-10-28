@@ -1,15 +1,15 @@
 ---
 title: "First Post"
-date: 2022-10-27
+date: 2022-10-28
 ---
 
 
-{% highlight javascript %}
-function sayHello(name) {
-  if (!name) {
-    console.log('Hello World');
-  } else {
-    console.log(`Hello ${name}`);
-  }  
-}  
-{% endhighlight %}
+    {% highlight javascript %}
+    function sayHello(name) {
+      if (!name) {
+        console.log('Hello World');
+      } else {
+        console.log(`Hello ${name}`);
+      }  
+    }  
+    {% endhighlight %}
