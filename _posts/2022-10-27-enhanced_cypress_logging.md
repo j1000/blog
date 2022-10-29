@@ -38,7 +38,7 @@ OK, so it looks to me like we're generating a unique email address and typing it
  
 I see one opportunity already, which leads to my next sub-topic:
 
- ## 2. Custom Commands
+## 2. Custom Commands
 
 Generating an email address is definitely something I'll be doing more than once across my entire test suite. This makes it an excellent candidate for a [custom command](https://docs.cypress.io/api/cypress-api/custom-commands), which has the additional benefit of helping with intent.
 
