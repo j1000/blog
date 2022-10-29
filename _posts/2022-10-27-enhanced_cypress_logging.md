@@ -228,7 +228,7 @@ function collapseLastGroup() {
 
 What `Cypress.logStep` is doing is extracting the currently-executing function name from the the `Error().stack` value. We wrap this in an `eval()` within our test in order to maintain the proper context.*
 
-> **If we called the function in a more traditional way then **that** function would become the context, and we'd get `logStep()` back as our return value.*
+> **If we called the function in a more traditional way then _that_ function would become the context, and we'd get `logStep()` back as our return value.*
 
 So then we follow this pattern:
 - Wrap each step in an appropriately-named function
