@@ -2,13 +2,12 @@
 title: "Enhanced Cypress Logging for Longer Tests"
 date: 2022-10-27
 ---
-
 - [1. The Dilemma](#1-the-dilemma)
 - [2. Custom Commands](#2-custom-commands)
 - [3. Quick & Dirty Intent: Comments, Logging](#3-quick--dirty-intent-comments-logging)
 - [4. A Better Way, Part 1: Abstracting Intent](#4-a-better-way-part-1-abstracting-intent)
 - [5. A Better Way, Part 2: Log Grouping](#5-a-better-way-part-2-log-grouping)
-- [A Better Way, Part 3: Grouping Steps](#a-better-way-part-3-grouping-steps)
+- [6. A Better Way, Part 3: Grouping Steps](#6-a-better-way-part-3-grouping-steps)
 
 ---
 
@@ -161,7 +160,7 @@ function collapseLastGroup() {
 
 The `collapseLastGroup()` function is a little hack to autoclose the groups after they've completed. It makes a big difference.
 
-## A Better Way, Part 3: Grouping Steps
+## 6. A Better Way, Part 3: Grouping Steps
 
 Grouping *steps* in the code makes a huge readability difference in the *editor*. Grouping *commands* makes a huge readability difference in the *log*. But wouldn't it be nice to do *both* of these things in the log? Yes, it would.
 
