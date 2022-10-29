@@ -5,9 +5,9 @@ date: 2022-10-27
 - [1. The Dilemma](#1-the-dilemma)
 - [2. Custom Commands](#2-custom-commands)
 - [3. Quick & Dirty Intent: Comments, Logging](#3-quick--dirty-intent-comments-logging)
-- [4. A Better Way, Part 1: Abstracting Intent](#4-a-better-way-part-1-abstracting-intent)
-- [5. A Better Way, Part 2: Log Grouping](#5-a-better-way-part-2-log-grouping)
-- [6. A Better Way, Part 3: Grouping Steps](#6-a-better-way-part-3-grouping-steps)
+- [4. A Better Way, Part 1: Abstracting Intent in the Code](#4-a-better-way-part-1-abstracting-intent-in-the-code)
+- [5. A Better Way, Part 2: Grouping Custom Commands in the Log](#5-a-better-way-part-2-grouping-custom-commands-in-the-log)
+- [6. A Better Way, Part 3: Grouping Steps in the Log](#6-a-better-way-part-3-grouping-steps-in-the-log)
 
 ---
 
@@ -70,7 +70,7 @@ Not bad. But I think we can do better. Even as an experienced Cypress developer 
 
 Even with excellent comments you end up with a lot of scrolling, and putting `cy.log()` everywhere only adds to the mess.
 
-## 4. A Better Way, Part 1: Abstracting Intent
+## 4. A Better Way, Part 1: Abstracting Intent in the Code
 
 A pattern I've grown fond of is wrapping every logical group of code (aka "step") into its own function. Nothing fancy, just a locally-scoped classic function, defined further down in the file.
 
@@ -92,7 +92,7 @@ But what can we actually do about this? We don't want to start throwing `{ log: 
 
 OK this is where things start to get a little non-standard.
 
-## 5. A Better Way, Part 2: Log Grouping
+## 5. A Better Way, Part 2: Grouping Custom Commands in the Log
 
 If you observe some Cypress features like `cy.session()` you'll notice that they create a neat little collapsible entry into the Cypress log, like so:
 
@@ -160,7 +160,7 @@ function collapseLastGroup() {
 
 The `collapseLastGroup()` function is a little hack to autoclose the groups after they've completed. It makes a big difference.
 
-## 6. A Better Way, Part 3: Grouping Steps
+## 6. A Better Way, Part 3: Grouping Steps in the Log
 
 Grouping *steps* in the code makes a huge readability difference in the *editor*. Grouping *commands* makes a huge readability difference in the *log*. But wouldn't it be nice to do *both* of these things in the log? Yes, it would.
 
