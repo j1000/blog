@@ -172,7 +172,7 @@ Now let's look at the definition of that first function, `visitRegisterPage()`:
 
 ![](assets/2022-10-29-14-36-50.png)
 
-That first line is the kludge. There may be better ways to do this, but this is the only one I know of myself. It's referencing a value on the Cypress object, a value I created myself. (Never mind that `cy.checkpoint()` for now; maybe I'll talk about that in a future blog post.)
+That first line is the kludge. There may be better ways to do this, but this is the only one I know of myself. It's referencing a value on the Cypress object, containing a string representation of a function. (Never mind that `cy.checkpoint()` for now; maybe I'll talk about that in a future blog post.)
 
 Here is the definition. This goes in your `e2e.js` file (the JavaScript file which is run before each test when doing e2e testing).
 
@@ -226,7 +226,7 @@ function collapseLastGroup() {
 }
 ```
 
-What `Cypress.logStep` is doing is extracting the currently-executing function name from the the `Error().stack` value. We wrap this in an `eval()` within our test in order to maintain the proper context.*
+What `Cypress.logStep` is doing is extracting the currently-executing function name from the the `Error().stack` value. We save it as a string and execute it using an `eval()` within our test in order to maintain the proper context.*
 
 > **If we called the function in a more traditional way then _that_ function would become the context, and we'd get `logStep()` back as our return value.*
 
