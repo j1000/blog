@@ -5,7 +5,7 @@ date: 2022-10-27
 - [1. The Dilemma](#1-the-dilemma)
 - [2. Custom Commands](#2-custom-commands)
 - [3. Quick & Dirty Intent: Comments, Logging](#3-quick--dirty-intent-comments-logging)
-- [4. A Better Way, Part 1: Abstracting Intent in the Code](#4-a-better-way-part-1-abstracting-intent-in-the-code)
+- [4. A Better Way, Part 1: Abstracting the Code](#4-a-better-way-part-1-abstracting-the-code)
 - [5. A Better Way, Part 2: Grouping Custom Commands in the Log](#5-a-better-way-part-2-grouping-custom-commands-in-the-log)
 - [6. A Better Way, Part 3: Grouping Steps in the Log](#6-a-better-way-part-3-grouping-steps-in-the-log)
 
@@ -70,7 +70,7 @@ Not bad. But I think we can do better. Even as an experienced Cypress developer 
 
 Even with excellent comments you end up with a lot of scrolling, and putting `cy.log()` everywhere only adds to the mess.
 
-## 4. A Better Way, Part 1: Abstracting Intent in the Code
+## 4. A Better Way, Part 1: Abstracting the Code
 
 A pattern I've grown fond of is wrapping every logical group of code (aka "step") into its own function. Nothing fancy, just a locally-scoped classic function, defined further down in the file.
 
