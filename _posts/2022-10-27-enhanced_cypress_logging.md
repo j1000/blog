@@ -225,6 +225,7 @@ function collapseLastGroup() {
   if (el) el.parentElement.click()
 }
 ```
+> Edit: My example utilizes dayjs for timestamping. You can omit `logTimestampToNodeConsole()` entirely. (Or you can install dayjs yourself.)
 
 What `Cypress.logStep` is doing is extracting the currently-executing function name from the the `Error().stack` value. We save it as a string and execute it using an `eval()` within our test in order to maintain the proper context.*
 
