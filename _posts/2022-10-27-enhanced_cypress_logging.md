@@ -120,7 +120,7 @@ So how do you do this with your own code? Follow the pattern here for `cy.newUse
 Cypress.Commands.add('newUser', () => {
   const message = '**newUser** ~ registering a new user'
 
-  const log = Cypress.log({
+  Cypress.log({
     name: 'command',
     message: message,
     groupStart: true,
